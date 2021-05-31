@@ -6,3 +6,26 @@ If( WndExists("Application Error") )
 	SendOK()
 	Run("My Flash Disk\IGO\Navi.exe")
 EndIf
+
+# Poweroff on 8 seconds of inactivity
+PlaySound("jbeep.wav")
+while (true) 
+	while (externalpowered())	
+		i = 0
+		sleep (1000)
+	endwhile
+	
+	while (not externalpowered())
+		sleep (1000)
+		PlaySound("jbeep.wav")
+		i = i + 1
+		if(i >= 8)
+			PowerOff
+		endif
+	Endwhile
+	
+	if((i > 0) && externalpowered())
+		PlaySound("jbeep.wav")
+	endif
+endwhile
+Exit

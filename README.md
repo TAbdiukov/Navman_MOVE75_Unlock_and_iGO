@@ -2,9 +2,18 @@
 Unlock Navman MOVE75 and install iGO on it
 
 ## Known issues
-1. The device will NOT sleep (suspend, hibernate properly) as the device will fail to jump back into iGO. This is because iGo is being launched from MortScript, which the system does NOT go after sleep.
 
-	Therefore, step 3 is required to mitigate the issue
+1. **[worked-around]** iGO does not run from the first time. 
+
+	* MortScript workaround applied
+
+2. **[replaced]** The device does NOT work with [PowerM](http://4pna.com/showthread.php?t=9092) . Fails at the line 216. No known fix, but MortScr workaround applied.
+
+3. **[worked-around through PowerOff]** The device will NOT sleep (suspend, hibernate) properly, as the device will fail to jump back into iGO. This is because iGO is being launched from MortScript, which the system does NOT go after sleep as required for the proper functioning.
+	
+	* Therefore, step 3 is required to mitigate the issue.
+
+	* MortScript workaround for PowerOff applied
 
 
 ## How to unlock a stock device
@@ -13,14 +22,17 @@ Unlock Navman MOVE75 and install iGO on it
 2. Modify appstartupsec.ini to run your apps
 
 ## How to run iGo on this device
-This device **extraordinarily** does not allow running iGO, so  to work around this issue, MortScript was emplyed
+This device **extraordinarily** does not allow running iGO, so  to work around this issue, MortScript was employed
 
 This is likely the Navman's vendor restriction
 
 To work around the issue
 1. Copy all files to the device
 2. Copy iGo packages to `(device root)\IGO\` . So iGo must be in `(device root)\IGO\Navi.exe`
-3. Append your `sys.txt` with data from `sys_required_params.txt`
+3. Append your `(device root)\IGO\sys.txt` with data from `(device root)\IGO\sys_required_params.txt`
+	
+	This step is required to mitigate bugs
+
 
 ## Startup sequences comparison
 
@@ -28,6 +40,8 @@ To work around the issue
 * Quick unlock: Bootloader -> ??? -> ~~AppStartupSec.exe~~ Total Commander
 * Unlocked startup (this repo): Bootloader -> ??? -> AppStartupSec.exe -> (multiple applications including) ~~Navman~~ MortScript Autorun -> MortScript (custom autorun.mscr) -> modified iGo initialisation sequence -> iGo
 
+## Credits
+* jbeep.wav - [taken on Freesound (no copyright)](https://freesound.org/people/jodybruchon/sounds/459460/)
 
 ## Other
 ### PortTool v9
