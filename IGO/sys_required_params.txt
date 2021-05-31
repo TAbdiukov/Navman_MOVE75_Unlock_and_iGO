@@ -1,0 +1,5 @@
+[power]
+skip_suspend_process=1
+skip_resume_process=1
+skip_suspend_process_all=1
+skip_resume_process_all=1

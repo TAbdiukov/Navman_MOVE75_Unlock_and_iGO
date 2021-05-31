@@ -1,6 +1,12 @@
 # Navman_MOVE75_Unlock_and_iGO
 Unlock Navman MOVE75 and install iGO on it
 
+## Known issues
+1. The device will NOT sleep (suspend, hibernate properly) as the device will fail to jump back into iGO. This is because iGo is being launched from MortScript, which the system does NOT go after sleep.
+
+	Therefore, step 3 is required to mitigate the issue
+
+
 ## How to unlock a stock device
 `cd` to Program Files -> Navman . Then either 
 1. Replace AppStartupSec.exe with Total Commander (`AppStartupSec.exe.tc`) , or
@@ -13,7 +19,8 @@ This is likely the Navman's vendor restriction
 
 To work around the issue
 1. Copy all files to the device
-2. Copy iGo packages to `(device root)\SY\` . So iGo must be in `(device root)\SY\Navi.exe`
+2. Copy iGo packages to `(device root)\IGO\` . So iGo must be in `(device root)\IGO\Navi.exe`
+3. Append your `sys.txt` with data from `sys_required_params.txt`
 
 ## Startup sequences comparison
 
