@@ -9,12 +9,12 @@ EndIf
 
 # Poweroff on 8 seconds of inactivity
 PlaySound("jbeep.wav")
-while (true) 
-	while (externalpowered())	
+while (true)
+	while (externalpowered())
 		i = 0
 		sleep (1000)
 	endwhile
-	
+
 	while (not externalpowered())
 		sleep (1000)
 		PlaySound("jbeep.wav")
@@ -23,7 +23,7 @@ while (true)
 			PowerOff
 		endif
 	Endwhile
-	
+
 	if((i > 0) && externalpowered())
 		PlaySound("jbeep.wav")
 	endif
