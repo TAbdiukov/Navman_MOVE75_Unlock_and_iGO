@@ -1,33 +1,18 @@
-# Navman_MOVE75_Unlock_and_iGO
-Unlock Navman MOVE75 and install iGO on it
-
-## Known issues
-
-1. **[worked-around]** iGO does not run from the first time. 
-
-	* MortScript workaround applied
-
-2. **[replaced]** The device does NOT work with [PowerM](http://4pna.com/showthread.php?t=9092) . Fails at the line 216. No known fix, but MortScr workaround applied.
-
-3. **[worked-around through PowerOff]** The device will NOT sleep (suspend, hibernate) properly, as the device will fail to jump back into iGO. This is because iGO is being launched from MortScript, which the system does NOT go after sleep as required for the proper functioning.
-	
-	* Therefore, step 3 is required to mitigate the issue.
-
-	* MortScript workaround for PowerOff applied
-
+# Navman MOVE75 Unlock and (install) iGO
+This work enables you to unlock Navman MOVE75 and install iGO on it.
 
 ## How to unlock a stock device
-`cd` to Program Files -> Navman . Then either 
-1. Replace AppStartupSec.exe with Total Commander (`AppStartupSec.exe.tc`) , or
+Browse to Program Files → Navman. Then either:  
+1. Replace AppStartupSec.exe with Total Commander (`AppStartupSec.exe.tc`), or
 2. Modify appstartupsec.ini to run your apps
 
 ## How to run iGo on this device
-This device **extraordinarily** does not allow running iGO, so  to work around this issue, MortScript was employed
+This device goes far and beyond not to allow running iGO, so to work around this issue, MortScript was employed.
 
-This is likely the Navman's vendor restriction
+This is likely a vendor restriction.
 
-To work around the issue
-1. Copy all files to the device
+To work around the issue,
+1. Copy all files to the device.
 2. Copy iGo packages to `(device root)\IGO\` . So iGo must be in `(device root)\IGO\Navi.exe`
 3. Append your `(device root)\IGO\sys.txt` with data from `(device root)\IGO\sys_required_params.txt`
 	
@@ -36,14 +21,28 @@ To work around the issue
 
 ## Startup sequences comparison
 
-* Normal startup: Bootloader -> ??? -> AppStartupSec.exe -> (multiple applications including) Navman
-* Quick unlock: Bootloader -> ??? -> ~~AppStartupSec.exe~~ Total Commander
-* Unlocked startup (this repo): Bootloader -> ??? -> AppStartupSec.exe -> (multiple applications including) ~~Navman~~ MortScript Autorun -> MortScript (custom autorun.mscr) -> modified iGo initialisation sequence -> iGo
+* Normal startup: Bootloader → ??? → AppStartupSec.exe → (multiple applications including) Navman
+* Quick unlock: Bootloader → ??? → ~~AppStartupSec.exe~~ Total Commander
+* Unlocked startup (this repo): Bootloader → ??? → AppStartupSec.exe → (multiple applications including) ~~Navman~~ MortScript Autorun → MortScript (custom autorun.mscr) → modified iGo initialisation sequence → iGo
 
 ## Credits
 * jbeep.wav - [taken on Freesound (no copyright)](https://freesound.org/people/jodybruchon/sounds/459460/)
 
-## Other
+## Known issues
+
+1. **[worked-around]** iGO does not run from the first time. 
+
+	* MortScript workaround applied.
+
+2. **[replaced]** The device does NOT work with [PowerM](http://4pna.com/showthread.php?t=9092). Fails at line 216. No known fix, but a MortScript workaround was applied.
+
+3. **[worked-around through PowerOff]** The device will NOT sleep (suspend, hibernate) properly, as the device will fail to jump back into iGO. This is because iGO is being launched from MortScript, which the system does NOT go after sleep as required for the proper functioning.
+	
+	* Therefore, step 3 is required to mitigate the issue.
+
+	* MortScript workaround for PowerOff applied.
+
+## Benchmarks
 ### PortTool v9
 ```
 ===PortTool Log v. 1, 0, 0, 9 === 
