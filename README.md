@@ -1,4 +1,7 @@
 # Navman MOVE75 Unlock and (install) iGO
+
+[![buymeacoffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/tabdiukov)
+
 This work enables you to unlock Navman MOVE75 and install iGO on it.
 
 ## How to unlock a stock device
